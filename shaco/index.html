@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LE PORTE CHE RIDONO — Eleonora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" class="game-shell">
+    <div class="grain"></div>
+    <div class="paranoia-vignette" aria-hidden="true"></div>
+    <div class="paranoia-scanlines" aria-hidden="true"></div>
+    <audio id="shaco-laugh" preload="auto" src="assets/audio/shaco-laugh-public-domain.ogg"></audio>
+    <header class="hud">
+      <div>
+        <p class="eyebrow">DOSSIER DEL SOGGETTO // SHACO</p>
+        <h1>Le porte che ridono</h1>
+      </div>
+      <div class="hud-stats">
+        <span>PORTE APERTE <b id="door-count">0</b></span>
+        <span>STANZA <b id="room-count">1</b></span>
+      </div>
+    </header>
+
+    <section class="intro" id="intro-panel">
+      <div class="intro-copy">
+        <p class="eyebrow">ELEONORA // MARCHIO: SPETTACOLO</p>
+        <h2>Trova l'uscita.<br><em>Se esiste.</em></h2>
+        <p>Ogni porta aperta ne fa comparire altre. Shaco non deve essere visto: deve essere sospettato.</p>
+        <button id="start-btn" class="primary-btn">ENTRA NEL CORRIDOIO</button>
+      </div>
+      <div class="portrait-frame"><img src="assets/eleonora-transparent.png" alt="Eleonora, il personaggio giocante"></div>
+    </section>
+
+    <section class="play-area hidden" id="play-area">
+      <div class="circus-sign"><span>THE SHACO CIRCUS</span><i>— solo una porta è uscita —</i></div>
+      <div class="room-meta"><span id="whisper">Non tutte le porte vogliono essere aperte.</span><span id="threat-meter">ATTENZIONE: 0%</span></div>
+      <div class="room" id="room">
+        <div class="moonlight"></div>
+        <div class="floor-shadow"></div>
+        <div class="character"><img src="assets/eleonora-transparent.png" alt="Eleonora"></div>
+        <div class="shaco-glimpse" id="shaco-glimpse" aria-hidden="true"><img class="shaco-main" src="assets/shaco-main-transparent.png" alt="Shaco che osserva dalla stanza"><img class="shaco-box" src="assets/shaco-box-transparent.png" alt="Shaco che esce dalla scatola"></div>
+        <div class="door-storm" id="door-storm" aria-hidden="true"></div>
+        <div class="reset-card" id="reset-card"><span>APPLAUSI.</span><strong>RICOMINCIA.</strong><small>Shaco ha deciso che lo spettacolo non è ancora finito.</small></div>
+        <div class="doors" id="doors"></div>
+      </div>
+      <p class="instruction">Scegli una porta. Non cliccare troppo in fretta. Il pubblico ama l'esitazione.</p>
+    </section>
+
+    <section class="ending hidden" id="ending">
+      <p class="eyebrow">FINE DELLA SCENA</p>
+      <h2>Non hai trovato l'uscita.<br><em>Hai trovato il pubblico.</em></h2>
+      <p>Per un istante, Shaco era dietro la porta che non hai aperto.</p>
+      <button id="again-btn" class="primary-btn">TORNA DENTRO</button>
+    </section>
+
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
