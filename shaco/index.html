@@ -11,15 +11,12 @@
     <div class="grain"></div>
     <div class="paranoia-vignette" aria-hidden="true"></div>
     <div class="paranoia-scanlines" aria-hidden="true"></div>
-    <audio id="shaco-laugh" preload="auto" src="assets/audio/shaco-laugh-public-domain.ogg"></audio>
+    <audio id="shaco-laugh" preload="auto" src="assets/audio/shaco%20laugh.mp3"></audio>
+    <audio id="shaco-why" preload="auto" src="assets/audio/sound-shaco-whyso-serious-yss.mp3"></audio>
     <header class="hud">
       <div>
         <p class="eyebrow">DOSSIER DEL SOGGETTO // SHACO</p>
         <h1>Le porte che ridono</h1>
-      </div>
-      <div class="hud-stats">
-        <span>PORTE APERTE <b id="door-count">0</b></span>
-        <span>STANZA <b id="room-count">1</b></span>
       </div>
     </header>
 
@@ -34,18 +31,16 @@
     </section>
 
     <section class="play-area hidden" id="play-area">
-      <div class="circus-sign"><span>THE SHACO CIRCUS</span><i>— solo una porta è uscita —</i></div>
-      <div class="room-meta"><span id="whisper">Non tutte le porte vogliono essere aperte.</span><span id="threat-meter">ATTENZIONE: 0%</span></div>
+      <div class="room-meta">
+        <span id="whisper">Non tutte le porte vogliono essere aperte.</span>
+        <span class="hud-mini">PORTE <b id="door-count">0</b> · STANZA <b id="room-count">1</b> · <span id="threat-meter">ATTENZIONE: 0%</span></span>
+      </div>
       <div class="room" id="room">
-        <div class="moonlight"></div>
-        <div class="floor-shadow"></div>
-        <div class="character"><img src="assets/eleonora-transparent.png" alt="Eleonora"></div>
+        <canvas id="scene3d"></canvas>
         <div class="shaco-glimpse" id="shaco-glimpse" aria-hidden="true"><img class="shaco-main" src="assets/shaco-main-transparent.png" alt="Shaco che osserva dalla stanza"><img class="shaco-box" src="assets/shaco-box-transparent.png" alt="Shaco che esce dalla scatola"></div>
         <div class="door-storm" id="door-storm" aria-hidden="true"></div>
         <div class="reset-card" id="reset-card"><span>APPLAUSI.</span><strong>RICOMINCIA.</strong><small>Shaco ha deciso che lo spettacolo non è ancora finito.</small></div>
-        <div class="doors" id="doors"></div>
       </div>
-      <p class="instruction">Scegli una porta. Non cliccare troppo in fretta. Il pubblico ama l'esitazione.</p>
     </section>
 
     <section class="ending hidden" id="ending">
@@ -57,6 +52,7 @@
 
     <div class="toast" id="toast" role="status"></div>
   </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
